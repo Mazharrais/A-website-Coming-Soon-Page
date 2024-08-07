@@ -1,6 +1,6 @@
 
 
-var countDownDate = new Date ("Sep 9, 2024 00:00:00").getTime();
+var countDownDate = new Date ("nov 9, 2024 00:00:00").getTime();
 var x = setInterval(function (){
   var now = new Date().getTime();
   var distance = countDownDate - now;
@@ -18,6 +18,12 @@ var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   document.getElementById("seconds").innerHTML = seconds;
 
 
-  
+  if(distance < 0){
+     clearInterval(x);
+  document.getElementById("days").innerHTML = "00";
+  document.getElementById("hours").innerHTML = "00";
+  document.getElementById("mintues").innerHTML = "00";
+  document.getElementById("seconds").innerHTML = "00";
+  }
 
 },1000)
